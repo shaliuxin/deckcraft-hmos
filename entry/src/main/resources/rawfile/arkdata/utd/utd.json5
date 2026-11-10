@@ -1,0 +1,26 @@
+{
+  "UniformDataTypeDeclarations": [
+    {
+      "TypeId": "io.github.shaliuxin.deckcraft.hmos.pptx",
+      "BelongingToTypes": [
+        "general.file"
+      ],
+      "FilenameExtensions": [
+        ".pptx",
+        ".ppt",
+        ".potx",
+        ".ppsx",
+        ".deckcraft"
+      ],
+      "MIMETypes": [
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "application/vnd.ms-powerpoint",
+        "application/vnd.openxmlformats-officedocument.presentationml.template",
+        "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+        "application/octet-stream"
+      ],
+      "Description": "DeckCraft presentation",
+      "ReferenceURL": ""
+    }
+  ]
+}

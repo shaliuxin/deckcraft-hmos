@@ -1,0 +1,11 @@
+{
+  "name": "entry",
+  "version": "0.1.0",
+  "description": "DeckCraft HarmonyOS entry module",
+  "main": "",
+  "author": "",
+  "license": "MIT OR Apache-2.0",
+  "dependencies": {
+    "libdeckcraft.so": "file:./src/main/cpp/types/libdeckcraft"
+  }
+}

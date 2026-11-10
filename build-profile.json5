@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\mingh\\.ohos\\config\\default_deckcraft-hmos_xP0vG-dxdccF2iyuEabeHNrhEEeXMq-FWaqq8FkyVIs=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001AB22F9588DEADAC3AFB24F756B62B0C69BDF0A7D433D1B37C9826E6A5B30D835C38E79D0DDD2A",
+          "profile": "C:\\Users\\mingh\\.ohos\\config\\default_deckcraft-hmos_xP0vG-dxdccF2iyuEabeHNrhEEeXMq-FWaqq8FkyVIs=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\mingh\\.ohos\\config\\default_deckcraft-hmos_xP0vG-dxdccF2iyuEabeHNrhEEeXMq-FWaqq8FkyVIs=.p12",
+          "storePassword": "0000001AA20DF080C84343751CA8BC5121E67C45B290025F223BF78C783240F3F24D15E24194ECC7FCE2"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.0",
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ],
+    "capabilities": [
+      {
+        "bundleName": "io.github.shaliuxin.deckcraft.hmos",
+        "config": []
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
