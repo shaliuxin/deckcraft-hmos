@@ -3,14 +3,14 @@
 把 [DeckCraft](https://github.com/storytold/deckcraft)（纯 Rust 的演示文稿 / 幻灯片编辑器）
 移植到 HarmonyOS，产出 DevEco Studio 工程与可签名的 `.hap`。
 
-- **上游**：`storytold/deckcraft`，对齐 commit `c4674f24fb11eda1cdb440253c88fac686cbbafe`，
-  其 `[workspace.package] version` 为 `0.15.0`（`Cargo.toml`）。
+- **上游**：`storytold/deckcraft`，对齐 tag `v0.18.1`（commit `7cc73ab1895ed2e30c8afbcada20c70b9ea0a440`），
+  其 `[workspace.package] version` 为 `0.18.1`（`Cargo.toml`）。
 - **方法**：复用 `wordcraft-hmos` 的三层架构蓝本，并按
   `craft-鸿蒙移植通用检查清单.md` 中 PhotoCraft / GridCraft / VectorCraft 的实测经验改名与补缝；
   除下述**一处 3 行的占位符提示钩子**（由幂等脚本管理、可一键还原）外，上游源码零改动，
   所有鸿蒙逻辑都在独立的 `native/rust` 适配层 workspace 内。
 - **应用名与版本**：显示名 `DeckCraft`（不带平台后缀）；
-  `versionName = 0.15.0`、`versionCode = 1500`（`0×10000 + 15×100 + 0`）。
+  `versionName = 0.18.1`、`versionCode = 1801`（`0×10000 + 18×100 + 1`）。
 - **专属包名**：`io.github.shaliuxin.deckcraft.hmos`，不复用任何其它 craft 项目的
   bundleName / 签名 profile。
 
@@ -112,9 +112,9 @@ python scripts/verify_native.py entry/build/default/outputs/default/entry-defaul
 
 # 4) 归档（统一交付目录，文件名 = 显示名 + versionName）
 cp entry/build/default/outputs/default/entry-default-signed.hap \
-   "/c/Users/mingh/OneDrive/HAP/DeckCraft-0.15.0.hap"
+   "/c/Users/mingh/OneDrive/HAP/DeckCraft-0.18.1.hap"
 md5sum entry/build/default/outputs/default/entry-default-signed.hap \
-       "/c/Users/mingh/OneDrive/HAP/DeckCraft-0.15.0.hap"
+       "/c/Users/mingh/OneDrive/HAP/DeckCraft-0.18.1.hap"
 ```
 
 > 最终交付 `DeckCraft-0.15.0.hap`：**85,400,367 B**，MD5 `e9d86fc424a6e7f20a41cf1f39398662`
@@ -137,7 +137,7 @@ md5sum entry/build/default/outputs/default/entry-default-signed.hap \
   本工程已于 2026-11-09 完成这一步：`~/.ohos/config/default_deckcraft-hmos_xP0vG-….{cer,p12,p7b}`，
   profile 内 `"type":"debug"` / `"issuer":"app_gallery"` / `"bundle-name":"io.github.shaliuxin.deckcraft.hmos"`
   / `debug-info.device-ids` 绑定本机 UDID。重打包后 `install bundle successfully`。
-- **换 Profile 后必须重打包 + 重新归档**：同版本重编直接覆盖 `OneDrive\HAP\DeckCraft-0.15.0.hap`，
+- **换 Profile 后必须重打包 + 重新归档**：同版本重编直接覆盖 `OneDrive\HAP\DeckCraft-0.18.1.hap`，
   并复核字节数 + MD5 + `cmp`；旧包里的仍是本地 CA 链，不能当交付物。
   本地未跟踪备份见 `signing/build-profile.local.json5`。
 
